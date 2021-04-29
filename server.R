@@ -149,4 +149,9 @@ shiny::shinyServer(function(input, output, session) {
                    selected = db_names
                  )
                })
+  
+  output$dataSourceTable <- DT::renderDT({
+    data <- read.csv(file = "datasource.csv")
+    return(data)
+  })
 })

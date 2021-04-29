@@ -14,7 +14,8 @@ dashboardPage(
     tags$head(tags$style(HTML(paste0('.main-header { background-color: ', ohdsiBlueHex, '; }')))),
     sidebarMenu(id = "tabs",
                 menuItem("Results", tabName = "results"),
-                menuItem("About", tabName = "about")
+                menuItem("About", tabName = "about"),
+                menuItem("Data Source", tabName = "dataSource")
     )
   ),
   dashboardBody(
@@ -44,7 +45,9 @@ dashboardPage(
                          tabPanel("Table", DT::DTOutput("resultTable"))
              )
             
-      )
+      ),
+     tabItem(tabName = "dataSource",
+             shinydashboard::box(DT::DTOutput("dataSourceTable"),width = NULL))
     )
   )
 )
