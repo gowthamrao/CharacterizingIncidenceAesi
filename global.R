@@ -18,9 +18,9 @@ source('Result/HelperFunction.R')
 
 options(scipen = 999)
 
-IR_all_orig <-  readr::read_csv('csv/aesi_ir_raw_27april.csv')
+IR_all_orig <-  readr::read_csv('csv/aesi_ir_raw_27april.csv', col_types = readr::cols())
 
-meta_result0 <- readr::read_csv('csv/meta_result0_27April.csv')
+meta_result0 <- readr::read_csv('csv/meta_result0_27April.csv', col_types = readr::cols())
 
 ## subgroup ref 
 subgroup_ref <- IR_all_orig %>% dplyr::select(subgroupCohortDefinitionId, subgroupName) %>% 
@@ -28,8 +28,8 @@ subgroup_ref <- IR_all_orig %>% dplyr::select(subgroupCohortDefinitionId, subgro
   dplyr::mutate(sex_group = dplyr::case_when(grepl('Male',subgroupName) ~ 'Male',
                              grepl('Female',subgroupName) ~'Female',
                              TRUE ~ 'NA'),
-         age_lb = as.numeric(sub("\\D*(\\d+).*", "\\1",subgroupName)),
-         age_ub = as.numeric(sub(".*\\b(\\d+).*", "\\1", subgroupName)),
+         age_lb = suppressWarnings(as.numeric(sub("\\D*(\\d+).*", "\\1",subgroupName))),
+         age_ub = suppressWarnings(as.numeric(sub(".*\\b(\\d+).*", "\\1", subgroupName))),
          age_group = paste(age_lb, "-", age_ub)
   ) %>% dplyr::arrange(age_lb) %>%
   dplyr::group_by(subgroupCohortDefinitionId) %>% slice(1) %>% dplyr::ungroup()
