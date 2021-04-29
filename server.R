@@ -115,13 +115,17 @@ shiny::shinyServer(function(input, output, session) {
         .data$databaseName,
         .data$age_group,
         .data$sex_group,
-        .data$incidenceRateP100py
+        .data$incidenceRateP100py,
+        .data$personYears,
+        .data$numPersonsWOutcome
       ) %>% 
-      dplyr::rename("Outcome"= "outcomeName",
-                    "Database"= "databaseName",
-                    "Age"= "age_group",
-                    "Sex"= "sex_group",
-                    "Incidence Rate"= "incidenceRateP100py")
+      dplyr::rename("Outcome" = "outcomeName",
+                    "Database" = "databaseName",
+                    "Age" = "age_group",
+                    "Sex" = "sex_group",
+                    "Incidence Rate/100py" = "incidenceRateP100py",
+                    "Person Years" = "personYears",
+                    "Case Count" = "numPersonsWOutcome") 
     return(data)
   })
   observe({
