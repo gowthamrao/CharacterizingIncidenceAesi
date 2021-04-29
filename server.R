@@ -1,18 +1,52 @@
 shiny::shinyServer(function(input, output, session) {
   
+  filteredSexGroups <- reactiveVal(NULL)
+  shiny::observeEvent(eventExpr = {
+    list(input$sexFilter_open,
+         input$tabs)
+  }, handlerExpr = {
+    if (isFALSE(input$sexFilter_open) || !is.null(input$tabs)) {
+      result <- input$sexFilter
+      filteredSexGroups(result)
+    }
+  })
+  
+  
+  filteredAgeGroups <- reactiveVal(NULL)
+  shiny::observeEvent(eventExpr = {
+    list(input$ageFilter_open,
+         input$tabs)
+  }, handlerExpr = {
+    if (isFALSE(input$ageFilter_open) || !is.null(input$tabs)) {
+      result <- input$ageFilter
+      filteredAgeGroups(result)
+    }
+  })
+  
+  filteredDatabaseIds <- reactiveVal(NULL)
+  shiny::observeEvent(eventExpr = {
+    list(input$databaseFilter_open,
+         input$tabs)
+  }, handlerExpr = {
+    if (isFALSE(input$databaseFilter_open) || !is.null(input$tabs)) {
+      result <- input$databaseFilter
+      filteredDatabaseIds(result)
+    }
+  })
+  
   IRFilteredPlotdata <- shiny::reactive({
     data <- ir_for_plot
-    if(!is.null(input$sexFilter)) {
+    if(!is.null(filteredSexGroups())) {
       data <- data %>% 
-        dplyr::filter(.data$sex_group %in% input$sexFilter)
+        dplyr::filter(.data$sex_group %in% filteredSexGroups())
     }
-    if(!is.null(input$ageFilter)) {
+    if(!is.null(filteredAgeGroups())) {
       data <- data %>% 
-        dplyr::filter(.data$age_group %in% input$ageFilter)
+        dplyr::filter(.data$age_group %in% filteredAgeGroups())
     }
-    if(!is.null(input$databaseFilter)) {
+    if(!is.null(filteredDatabaseIds())) {
       data <- data %>% 
-        dplyr::filter(.data$db_name %in% input$databaseFilter)
+        dplyr::filter(.data$db_name %in% filteredDatabaseIds())
     }
     return(data)
   })
@@ -90,8 +124,7 @@ shiny::shinyServer(function(input, output, session) {
                     "Incidence Rate"= "incidenceRateP100py")
     return(data)
   })
-  observeEvent(eventExpr = list(db_names, ageGroups, sexGroups),
-               handlerExpr = {
+  observe({
                  shinyWidgets::updatePickerInput(
                    session = session,
                    inputId = "sexFilter",
@@ -101,8 +134,8 @@ shiny::shinyServer(function(input, output, session) {
                  shinyWidgets::updatePickerInput(
                    session = session,
                    inputId = "ageFilter",
-                   choices = as.vector(ageGroups) %>%  sort(),
-                   selected = as.vector(ageGroups) %>%  sort()
+                   choices = as.vector(ageGroups),
+                   selected = as.vector(ageGroups)
                  )
                  shinyWidgets::updatePickerInput(
                    session = session,
