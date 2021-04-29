@@ -151,7 +151,8 @@ shiny::shinyServer(function(input, output, session) {
                })
   
   output$dataSourceTable <- DT::renderDT({
-    data <- read.csv(file = "datasource.csv")
+    data <- dataSource
+    colnames(data) <- camelCaseToTitleCase(colnames(data))
     return(data)
   })
 })

@@ -1,4 +1,4 @@
-Data source,Short name,Description
+dataSource,shortName,description
 IQVIA Australia Electronic Medical Records (Australia EMR),IQVIA_AUSTRALIA,Anonymized patient records of more than 6 million patients in Australia collected from Patient Management software used by GPs during an office visit to document patients’ clinical records.
 IQVIA Longitudinal Patient Data France (LPD France),IQVIA_FRANCE,Anonymized patient records of 7.8 million patients in France collected from Patient Management software used by GPs and select specialists during an office visit to document patients’ clinical records
 IQVIA Disease Analyser Germany (DA Germany),IQVIA_GERMANY,"IQVIA DA Germany is collected from extracts of patient management software used by GPs and specialists practicing in ambulatory care settings. Data coverage includes more than 34M distinct person records out of at total population of 80M (42.5%) in the country and collected from 2,734 providers. Dates of service include from 1992 through March 2020."
