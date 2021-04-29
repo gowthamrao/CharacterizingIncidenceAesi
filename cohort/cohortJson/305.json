@@ -1,16 +1,46 @@
 {
   "ConceptSets": [
     {
-      "id": 4,
-      "name": "Transverse Myelitis",
+      "id": 0,
+      "name": "Guillian-Barre syndrome",
       "expression": {
         "items": [
           {
             "concept": {
               "CONCEPT_CLASS_ID": "Clinical Finding",
-              "CONCEPT_CODE": "16631009",
-              "CONCEPT_ID": 443904,
-              "CONCEPT_NAME": "Transverse myelopathy syndrome",
+              "CONCEPT_CODE": "129131007",
+              "CONCEPT_ID": 374925,
+              "CONCEPT_NAME": "Acute infective polyneuritis",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "40956001",
+              "CONCEPT_ID": 4164770,
+              "CONCEPT_NAME": "Guillain-Barré syndrome",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "1767005",
+              "CONCEPT_ID": 4070552,
+              "CONCEPT_NAME": "Fisher's syndrome",
               "DOMAIN_ID": "Condition",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
@@ -24,8 +54,8 @@
       }
     },
     {
-      "id": 5,
-      "name": "Inpatient or Emergency Room visit",
+      "id": 1,
+      "name": "Inpatient or Inpatient/ER visit",
       "expression": {
         "items": [
           {
@@ -57,21 +87,6 @@
               "VOCABULARY_ID": "Visit"
             },
             "includeDescendants": true
-          },
-          {
-            "concept": {
-              "CONCEPT_CLASS_ID": "Visit",
-              "CONCEPT_CODE": "ER",
-              "CONCEPT_ID": 9203,
-              "CONCEPT_NAME": "Emergency Room Visit",
-              "DOMAIN_ID": "Visit",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "VOCABULARY_ID": "Visit"
-            },
-            "includeDescendants": true
           }
         ]
       }
@@ -81,7 +96,7 @@
     "CriteriaList": [
       {
         "ConditionOccurrence": {
-          "CodesetId": 4
+          "CodesetId": 0
         }
       }
     ],
@@ -99,7 +114,7 @@
       {
         "Criteria": {
           "VisitOccurrence": {
-            "CodesetId": 5
+            "CodesetId": 1
           }
         },
         "StartWindow": {
@@ -139,7 +154,7 @@
   },
   "InclusionRules": [
     {
-      "name": "has no events in prior 'clean window' - 365 days",
+      "name": "has no events in prior 'clean window'",
       "expression": {
         "Type": "ALL",
         "CriteriaList": [
@@ -152,7 +167,7 @@
                     {
                       "Criteria": {
                         "VisitOccurrence": {
-                          "CodesetId": 5
+                          "CodesetId": 1
                         }
                       },
                       "StartWindow": {
@@ -184,7 +199,7 @@
                   "DemographicCriteriaList": [],
                   "Groups": []
                 },
-                "CodesetId": 4
+                "CodesetId": 0
               }
             },
             "StartWindow": {

@@ -1,61 +1,39 @@
 {
   "ConceptSets": [
     {
-      "id": 1,
-      "name": "Inpatient or Inpatient/ER visit",
+      "id": 0,
+      "name": "Narcolepsy",
       "expression": {
         "items": [
           {
             "concept": {
-              "CONCEPT_CLASS_ID": "Visit",
-              "CONCEPT_CODE": "ERIP",
-              "CONCEPT_ID": 262,
-              "CONCEPT_NAME": "Emergency Room and Inpatient Visit",
-              "DOMAIN_ID": "Visit",
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "193042000",
+              "CONCEPT_ID": 437854,
+              "CONCEPT_NAME": "Cataplexy and narcolepsy",
+              "DOMAIN_ID": "Condition",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
               "STANDARD_CONCEPT": "S",
               "STANDARD_CONCEPT_CAPTION": "Standard",
-              "VOCABULARY_ID": "Visit"
+              "VOCABULARY_ID": "SNOMED"
             },
             "includeDescendants": true
           },
           {
             "concept": {
-              "CONCEPT_CLASS_ID": "Visit",
-              "CONCEPT_CODE": "IP",
-              "CONCEPT_ID": 9201,
-              "CONCEPT_NAME": "Inpatient Visit",
-              "DOMAIN_ID": "Visit",
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "60380001",
+              "CONCEPT_ID": 436100,
+              "CONCEPT_NAME": "Narcolepsy",
+              "DOMAIN_ID": "Condition",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
               "STANDARD_CONCEPT": "S",
               "STANDARD_CONCEPT_CAPTION": "Standard",
-              "VOCABULARY_ID": "Visit"
+              "VOCABULARY_ID": "SNOMED"
             },
             "includeDescendants": true
-          }
-        ]
-      }
-    },
-    {
-      "id": 4,
-      "name": "Disseminated intravascular coagulation FDA source concepts",
-      "expression": {
-        "items": [
-          {
-            "concept": {
-              "CONCEPT_CLASS_ID": "3-char billing code",
-              "CONCEPT_CODE": "D65",
-              "CONCEPT_ID": 35206758,
-              "CONCEPT_NAME": "Disseminated intravascular coagulation [defibrination syndrome]",
-              "DOMAIN_ID": "Condition",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "N",
-              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
-              "VOCABULARY_ID": "ICD10CM"
-            }
           }
         ]
       }
@@ -65,7 +43,7 @@
     "CriteriaList": [
       {
         "ConditionOccurrence": {
-          "ConditionSourceConcept": 4
+          "CodesetId": 0
         }
       }
     ],
@@ -92,7 +70,7 @@
           {
             "Criteria": {
               "ConditionOccurrence": {
-                "ConditionSourceConcept": 4
+                "CodesetId": 0
               }
             },
             "StartWindow": {

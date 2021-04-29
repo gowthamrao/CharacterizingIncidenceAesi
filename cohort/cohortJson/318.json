@@ -1,23 +1,24 @@
 {
   "ConceptSets": [
     {
-      "id": 0,
-      "name": "Idiopathic Thrombocytopenia purpura FDA ICD10CM source concepts",
+      "id": 4,
+      "name": "Transverse Myelitis",
       "expression": {
         "items": [
           {
             "concept": {
-              "CONCEPT_CLASS_ID": "4-char billing code",
-              "CONCEPT_CODE": "D69.3",
-              "CONCEPT_ID": 35206770,
-              "CONCEPT_NAME": "Immune thrombocytopenic purpura",
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "16631009",
+              "CONCEPT_ID": 443904,
+              "CONCEPT_NAME": "Transverse myelopathy syndrome",
               "DOMAIN_ID": "Condition",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "N",
-              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
-              "VOCABULARY_ID": "ICD10CM"
-            }
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
           }
         ]
       }
@@ -27,7 +28,7 @@
     "CriteriaList": [
       {
         "ConditionOccurrence": {
-          "ConditionSourceConcept": 0
+          "CodesetId": 4
         }
       }
     ],
@@ -54,7 +55,7 @@
           {
             "Criteria": {
               "ConditionOccurrence": {
-                "ConditionSourceConcept": 0
+                "CodesetId": 4
               }
             },
             "StartWindow": {

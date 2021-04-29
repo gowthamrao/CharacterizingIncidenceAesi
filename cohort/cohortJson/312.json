@@ -40,43 +40,15 @@
     },
     {
       "id": 2,
-      "name": "Ischemic stroke ",
+      "name": "Encephalomyelitis",
       "expression": {
         "items": [
           {
             "concept": {
               "CONCEPT_CLASS_ID": "Clinical Finding",
-              "CONCEPT_CODE": "20059004",
-              "CONCEPT_ID": 372924,
-              "CONCEPT_NAME": "Cerebral artery occlusion",
-              "DOMAIN_ID": "Condition",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "VOCABULARY_ID": "SNOMED"
-            }
-          },
-          {
-            "concept": {
-              "CONCEPT_CLASS_ID": "Clinical Finding",
-              "CONCEPT_CODE": "75543006",
-              "CONCEPT_ID": 375557,
-              "CONCEPT_NAME": "Cerebral embolism",
-              "DOMAIN_ID": "Condition",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "VOCABULARY_ID": "SNOMED"
-            }
-          },
-          {
-            "concept": {
-              "CONCEPT_CLASS_ID": "Clinical Finding",
-              "CONCEPT_CODE": "432504007",
-              "CONCEPT_ID": 443454,
-              "CONCEPT_NAME": "Cerebral infarction",
+              "CONCEPT_CODE": "192727001",
+              "CONCEPT_ID": 372615,
+              "CONCEPT_NAME": "Post-infectious encephalitis",
               "DOMAIN_ID": "Condition",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
@@ -89,9 +61,9 @@
           {
             "concept": {
               "CONCEPT_CLASS_ID": "Clinical Finding",
-              "CONCEPT_CODE": "71444005",
-              "CONCEPT_ID": 441874,
-              "CONCEPT_NAME": "Cerebral thrombosis",
+              "CONCEPT_CODE": "45170000",
+              "CONCEPT_ID": 378143,
+              "CONCEPT_NAME": "Encephalitis",
               "DOMAIN_ID": "Condition",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
@@ -103,9 +75,9 @@
           {
             "concept": {
               "CONCEPT_CLASS_ID": "Clinical Finding",
-              "CONCEPT_CODE": "1131000119105",
-              "CONCEPT_ID": 43530623,
-              "CONCEPT_NAME": "Sequela of cerebrovascular accident",
+              "CONCEPT_CODE": "267576008",
+              "CONCEPT_ID": 4147498,
+              "CONCEPT_NAME": "Encephalitis, myelitis and encephalomyelitis",
               "DOMAIN_ID": "Condition",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
@@ -114,6 +86,79 @@
               "VOCABULARY_ID": "SNOMED"
             },
             "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "62950007",
+              "CONCEPT_ID": 373189,
+              "CONCEPT_NAME": "Encephalomyelitis",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "39367000",
+              "CONCEPT_ID": 4190307,
+              "CONCEPT_NAME": "Inflammatory disease of the central nervous system",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "192704009",
+              "CONCEPT_ID": 379792,
+              "CONCEPT_NAME": "Post-immunization encephalitis",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "431520004",
+              "CONCEPT_ID": 4330496,
+              "CONCEPT_NAME": "Inflammation of spinal cord due to toxin",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "41370002",
+              "CONCEPT_ID": 138965,
+              "CONCEPT_NAME": "Myelitis",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            }
           }
         ]
       }
@@ -181,7 +226,7 @@
   },
   "InclusionRules": [
     {
-      "name": "has no events in prior 'clean window'",
+      "name": "has no events in prior 'clean window' 183 days",
       "expression": {
         "Type": "ALL",
         "CriteriaList": [
@@ -231,7 +276,7 @@
             },
             "StartWindow": {
               "Start": {
-                "Days": 365,
+                "Days": 183,
                 "Coeff": -1
               },
               "End": {

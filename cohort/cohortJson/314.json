@@ -1,93 +1,99 @@
 {
   "ConceptSets": [
     {
-      "id": 1,
-      "name": "Pulmonary Embolism FDA ICD10CM source concepts",
+      "id": 0,
+      "name": "Myocarditis Pericarditis",
       "expression": {
         "items": [
           {
             "concept": {
-              "CONCEPT_CLASS_ID": "5-char billing code",
-              "CONCEPT_CODE": "I26.09",
-              "CONCEPT_ID": 45586576,
-              "CONCEPT_NAME": "Other pulmonary embolism with acute cor pulmonale",
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "70189005",
+              "CONCEPT_ID": 4289908,
+              "CONCEPT_NAME": "Viral pericarditis",
               "DOMAIN_ID": "Condition",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "N",
-              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
-              "VOCABULARY_ID": "ICD10CM"
-            }
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
           },
           {
             "concept": {
-              "CONCEPT_CLASS_ID": "5-char billing code",
-              "CONCEPT_CODE": "I26.94",
-              "CONCEPT_ID": 1553750,
-              "CONCEPT_NAME": "Multiple subsegmental pulmonary emboli without acute cor pulmonale",
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "3238004",
+              "CONCEPT_ID": 4138837,
+              "CONCEPT_NAME": "Pericarditis",
               "DOMAIN_ID": "Condition",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "N",
-              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
-              "VOCABULARY_ID": "ICD10CM"
-            }
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
           },
           {
             "concept": {
-              "CONCEPT_CLASS_ID": "5-char billing code",
-              "CONCEPT_CODE": "I26.02",
-              "CONCEPT_ID": 45557540,
-              "CONCEPT_NAME": "Saddle embolus of pulmonary artery with acute cor pulmonale",
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "50920009",
+              "CONCEPT_ID": 314383,
+              "CONCEPT_NAME": "Myocarditis",
               "DOMAIN_ID": "Condition",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "N",
-              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
-              "VOCABULARY_ID": "ICD10CM"
-            }
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
           },
           {
             "concept": {
-              "CONCEPT_CLASS_ID": "5-char billing code",
-              "CONCEPT_CODE": "I26.99",
-              "CONCEPT_ID": 45572084,
-              "CONCEPT_NAME": "Other pulmonary embolism without acute cor pulmonale",
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "309762007",
+              "CONCEPT_ID": 4149913,
+              "CONCEPT_NAME": "Systemic lupus erythematosus with pericarditis",
               "DOMAIN_ID": "Condition",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "N",
-              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
-              "VOCABULARY_ID": "ICD10CM"
-            }
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
           },
           {
             "concept": {
-              "CONCEPT_CLASS_ID": "5-char billing code",
-              "CONCEPT_CODE": "I26.92",
-              "CONCEPT_ID": 45552786,
-              "CONCEPT_NAME": "Saddle embolus of pulmonary artery without acute cor pulmonale",
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "187059008",
+              "CONCEPT_ID": 318072,
+              "CONCEPT_NAME": "Histoplasmosis with pericarditis",
               "DOMAIN_ID": "Condition",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "N",
-              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
-              "VOCABULARY_ID": "ICD10CM"
-            }
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
           },
           {
             "concept": {
-              "CONCEPT_CLASS_ID": "5-char billing code",
-              "CONCEPT_CODE": "I26.93",
-              "CONCEPT_ID": 1553749,
-              "CONCEPT_NAME": "Single subsegmental pulmonary embolism without acute cor pulmonale",
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "34791000119103",
+              "CONCEPT_ID": 44782774,
+              "CONCEPT_NAME": "Chest pain due to pericarditis",
               "DOMAIN_ID": "Condition",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "N",
-              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
-              "VOCABULARY_ID": "ICD10CM"
-            }
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
           }
         ]
       }
@@ -97,7 +103,7 @@
     "CriteriaList": [
       {
         "ConditionOccurrence": {
-          "ConditionSourceConcept": 1
+          "CodesetId": 0
         }
       }
     ],
@@ -124,7 +130,7 @@
           {
             "Criteria": {
               "ConditionOccurrence": {
-                "ConditionSourceConcept": 1
+                "CodesetId": 0
               }
             },
             "StartWindow": {

@@ -1,51 +1,54 @@
 {
   "ConceptSets": [
     {
-      "id": 1,
-      "name": "Facial nerve palsy FDA ICD10CM source concepts",
+      "id": 0,
+      "name": "Idiopathic and Immune Thrombocytopenia",
       "expression": {
         "items": [
           {
             "concept": {
-              "CONCEPT_CLASS_ID": "4-char billing code",
-              "CONCEPT_CODE": "G51.0",
-              "CONCEPT_ID": 35207415,
-              "CONCEPT_NAME": "Bell's palsy",
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "371106008",
+              "CONCEPT_ID": 4159749,
+              "CONCEPT_NAME": "Idiopathic maternal thrombocytopenia",
               "DOMAIN_ID": "Condition",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "N",
-              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
-              "VOCABULARY_ID": "ICD10CM"
-            }
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
           },
           {
             "concept": {
-              "CONCEPT_CLASS_ID": "4-char billing code",
-              "CONCEPT_CODE": "G51.9",
-              "CONCEPT_ID": 35207421,
-              "CONCEPT_NAME": "Disorder of facial nerve, unspecified",
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "2897005",
+              "CONCEPT_ID": 4103532,
+              "CONCEPT_NAME": "Immune thrombocytopenia",
               "DOMAIN_ID": "Condition",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "N",
-              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
-              "VOCABULARY_ID": "ICD10CM"
-            }
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
           },
           {
             "concept": {
-              "CONCEPT_CLASS_ID": "4-char billing code",
-              "CONCEPT_CODE": "G51.8",
-              "CONCEPT_ID": 35207420,
-              "CONCEPT_NAME": "Other disorders of facial nerve",
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "302873008",
+              "CONCEPT_ID": 4119134,
+              "CONCEPT_NAME": "Thrombocytopenic purpura",
               "DOMAIN_ID": "Condition",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "N",
-              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
-              "VOCABULARY_ID": "ICD10CM"
-            }
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
           }
         ]
       }
@@ -55,7 +58,7 @@
     "CriteriaList": [
       {
         "ConditionOccurrence": {
-          "ConditionSourceConcept": 1
+          "CodesetId": 0
         }
       }
     ],
@@ -75,19 +78,19 @@
   },
   "InclusionRules": [
     {
-      "name": "has no events in prior 'clean window' 183 days",
+      "name": "has no events in prior 'clean window' - 365 days",
       "expression": {
         "Type": "ALL",
         "CriteriaList": [
           {
             "Criteria": {
               "ConditionOccurrence": {
-                "ConditionSourceConcept": 1
+                "CodesetId": 0
               }
             },
             "StartWindow": {
               "Start": {
-                "Days": 183,
+                "Days": 365,
                 "Coeff": -1
               },
               "End": {

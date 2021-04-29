@@ -1,4 +1,4 @@
-﻿Phenotype,cohortId,cohortName,Link,LinkSql,
+﻿phenotype,cohortId,cohortName,link,linkSql,
 Acute myocardial infarction IP,312, Acute myocardial infarction IP (365d),https://atlas.ohdsi.org/#/cohortdefinition/340,https://github.com/ohdsi-studies/Covid19VaccineAesiIncidenceCharacterization/blob/master/inst/sql/sql_server/outcome/AMI_IP.sql,
 Anaphylaxis,303, Anaphylaxis (30d) ,https://atlas.ohdsi.org/#/cohortdefinition/349,https://github.com/ohdsi-studies/Covid19VaccineAesiIncidenceCharacterization/blob/master/inst/sql/sql_server/outcome/Anaphylaxis.sql,
 Appendicitis,323, Appendicitis (365d),https://atlas.ohdsi.org/#/cohortdefinition/386,https://github.com/ohdsi-studies/Covid19VaccineAesiIncidenceCharacterization/blob/master/inst/sql/sql_server/outcome/Appendicitis.sql,
