@@ -264,7 +264,10 @@ db_names <- as.character(database_ref$db_name)
 
 
 ageGroups <- ir_for_plot$age_group %>% 
-  unique()
+  unique() %>% 
+  sort()
+
+ageGroups <- ageGroups[order(ageGroups)]
 sexGroups <- ir_for_plot$sex_group %>% 
   unique()
 

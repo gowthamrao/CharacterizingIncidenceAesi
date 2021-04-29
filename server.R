@@ -124,8 +124,7 @@ shiny::shinyServer(function(input, output, session) {
                     "Incidence Rate"= "incidenceRateP100py")
     return(data)
   })
-  observeEvent(eventExpr = list(db_names, ageGroups, sexGroups),
-               handlerExpr = {
+  observe({
                  shinyWidgets::updatePickerInput(
                    session = session,
                    inputId = "sexFilter",
@@ -135,8 +134,8 @@ shiny::shinyServer(function(input, output, session) {
                  shinyWidgets::updatePickerInput(
                    session = session,
                    inputId = "ageFilter",
-                   choices = as.vector(ageGroups) %>%  sort(),
-                   selected = as.vector(ageGroups) %>%  sort()
+                   choices = as.vector(ageGroups),
+                   selected = as.vector(ageGroups)
                  )
                  shinyWidgets::updatePickerInput(
                    session = session,
