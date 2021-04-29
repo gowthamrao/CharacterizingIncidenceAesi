@@ -23,8 +23,15 @@ dashboardPage(
               includeMarkdown("md/about.md")
       ),
      tabItem(tabName = "results",
-             column(4,
-             shinyWidgets::pickerInput(inputId = "sexFilter",label = "Filter by Sex",choices = c(),selected = c(),multiple = TRUE)
+             column(
+               4,
+               shinyWidgets::pickerInput(
+                 inputId = "sexFilter",
+                 label = "Filter by Sex",
+                 choices = c(),
+                 selected = c(),
+                 multiple = TRUE
+               )
              ),
              column(4,
              shinyWidgets::pickerInput(inputId = "ageFilter",label = "Filter by Age Group",choices = c(),selected = c(),multiple = TRUE)
