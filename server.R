@@ -125,7 +125,8 @@ shiny::shinyServer(function(input, output, session) {
                     "Sex" = "sex_group",
                     "Incidence Rate/100py" = "incidenceRateP100py",
                     "Person Years" = "personYears",
-                    "Case Count" = "numPersonsWOutcome") 
+                    "Case Count" = "numPersonsWOutcome") %>% 
+      dplyr::mutate_if(is.numeric, ~round(., 2))
     return(data)
   })
   observe({
