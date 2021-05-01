@@ -161,8 +161,9 @@ shiny::shinyServer(function(input, output, session) {
     data <- cohort %>% 
       dplyr::select(.data$phenotype,.data$cohortId,.data$cohortName,.data$link)
     colnames(data) <- camelCaseToTitleCase(colnames(data))
-    return(data)
-  },selection="single")
+    table <- standardDataTable(data)
+    return(table)
+  }, selection = "single")
   
   selectedCohortDefinitionRow <- reactive({
     idx <- input$cohortTable_rows_selected
