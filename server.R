@@ -292,29 +292,7 @@ shiny::shinyServer(function(input, output, session) {
     } else {
       return(NULL)
     }
-    
-    options = list(
-      pageLength = 100,
-      lengthMenu = list(c(10, 100, 1000, -1), c("10", "100", "1000", "All")),
-      searching = TRUE,
-      lengthChange = TRUE,
-      ordering = TRUE,
-      paging = TRUE,
-      info = TRUE,
-      searchHighlight = TRUE,
-      scrollX = TRUE
-    )
-    
-    dataTable <- DT::datatable(
-      data,
-      options = options,
-      colnames = colnames(data) %>% camelCaseToTitleCase(),
-      rownames = FALSE,
-      selection = 'single',
-      escape = FALSE,
-      filter = "top",
-      class = "stripe nowrap compact"
-    )
+    dataTable <- standardDataTable(data = data)
     return(dataTable)
   }, server = TRUE)
   
@@ -371,9 +349,7 @@ shiny::shinyServer(function(input, output, session) {
       if (is.null(cohortDefinitionConceptSets())) {
         return(NULL)
       }
-      dataTable <- standardDataTable(data = data,
-                                 selectionMode = "single" #,selected = selectedRowindex
-      )
+      dataTable <- standardDataTable(data = data)
       return(dataTable)
     }, server = TRUE)
   
