@@ -55,10 +55,16 @@ shiny::shinyServer(function(input, output, session) {
     shiny::withProgress(message = "Building Plot. . .", {
       validate(need((nrow(IRFilteredPlotdata()) > 0), paste0("Data is not loaded.")))
       
-     p0 <- plotIRv3(outcomeCohortDefinitionId, "Common",data = IRFilteredPlotdata())
+      if ('Meta-Analysis' %in% filteredDatabaseIds()) {
+        presentMetaAnalysisInPlot <- TRUE
+      } else {
+        presentMetaAnalysisInPlot <- FALSE
+      }
+      
+     p0 <- plotIRv3(outcomeCohortDefinitionId, "Common",data = IRFilteredPlotdata(), metaAnalysis = presentMetaAnalysisInPlot)
       
      p1 <-
-        plotIRv3(outcomeCohortDefinitionId, "Common",data = IRFilteredPlotdata()) + theme_my(base_size = 9) +
+        plotIRv3(outcomeCohortDefinitionId, "Common",data = IRFilteredPlotdata(), metaAnalysis = presentMetaAnalysisInPlot) + theme_my(base_size = 9) +
         scale_y_continuous(
           trans = 'log10',
           limits = c(0.1, 10000),
@@ -66,7 +72,7 @@ shiny::shinyServer(function(input, output, session) {
         ) +
         theme(legend.position = "none")
       p2 <-
-        plotIRv3(outcomeCohortDefinitionId,  "Rare",data = IRFilteredPlotdata()) + theme_my(base_size = 10) +
+        plotIRv3(outcomeCohortDefinitionId,  "Rare",data = IRFilteredPlotdata(), metaAnalysis = presentMetaAnalysisInPlot) + theme_my(base_size = 10) +
         scale_y_continuous(
           trans = 'log10',
           limits = c(.1, 1000),
@@ -74,7 +80,7 @@ shiny::shinyServer(function(input, output, session) {
         ) +
         theme(legend.position = "none")
       p3 <-
-        plotIRv3(outcomeCohortDefinitionId,  "Very rare",data = IRFilteredPlotdata()) + theme_my(base_size =
+        plotIRv3(outcomeCohortDefinitionId,  "Very rare",data = IRFilteredPlotdata(), metaAnalysis = presentMetaAnalysisInPlot) + theme_my(base_size =
                                                                        10) +
         scale_y_continuous(
           trans = 'log10',
