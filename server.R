@@ -371,31 +371,8 @@ shiny::shinyServer(function(input, output, session) {
       if (is.null(cohortDefinitionConceptSets())) {
         return(NULL)
       }
-      
-      options = list(
-        pageLength = 100,
-        lengthMenu = list(c(10, 100, 1000, -1), c("10", "100", "1000", "All")),
-        searching = TRUE,
-        lengthChange = TRUE,
-        ordering = TRUE,
-        paging = TRUE,
-        info = TRUE,
-        searchHighlight = TRUE,
-        scrollX = TRUE,
-        columnDefs = list(
-          truncateStringDef(1, 80)
-        )
-      )
-      
-      dataTable <- DT::datatable(
-        data,
-        options = options,
-        colnames = colnames(data) %>% camelCaseToTitleCase(),
-        rownames = FALSE,
-        escape = FALSE,
-        selection = 'single',
-        filter = "top",
-        class = "stripe nowrap compact"
+      dataTable <- standardDataTable(data = data,
+                                 selectionMode = "single" #,selected = selectedRowindex
       )
       return(dataTable)
     }, server = TRUE)
