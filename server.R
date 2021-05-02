@@ -35,6 +35,10 @@ shiny::shinyServer(function(input, output, session) {
   })
   
   IRFilteredPlotdata <- shiny::reactive({
+    validate(need(length(filteredSexGroups()) > 0, "No gender selected"))
+    validate(need(length(filteredAgeGroups()) > 0, "No age groups selected"))
+    validate(need(length(filteredDatabaseIds()) > 0, "No databases selected"))
+    
     data <- ir_for_plot
     if(!is.null(filteredSexGroups())) {
       data <- data %>% 
