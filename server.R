@@ -163,14 +163,15 @@ shiny::shinyServer(function(input, output, session) {
   
   output$dataSourceTable <- DT::renderDT({
     data <- dataSource
-    colnames(data) <- camelCaseToTitleCase(colnames(data))
-    return(data)
+    dataTable <- standardDataTable(data)
+    return(dataTable)
   })
   
   output$cohortTable <- DT::renderDT({
     data <- cohort %>% 
-      dplyr::select(.data$phenotype,.data$cohortId,.data$cohortName,.data$link)
-    colnames(data) <- camelCaseToTitleCase(colnames(data))
+      dplyr::select(.data$phenotype,.data$cohortId,.data$cohortName,.data$link) %>% 
+      dplyr::mutate(cohortName = paste0("<a href='",.data$link,"'>",.data$cohortName,"</a>")) %>% 
+      dplyr::select(-.data$link)
     table <- standardDataTable(data)
     return(table)
   }, selection = "single")
