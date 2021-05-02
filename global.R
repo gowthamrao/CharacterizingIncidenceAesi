@@ -16,12 +16,12 @@ library(cowplot)
 source('script/HelperFunction.R')
 source('script/StandardDataTable.R')
 source('script/DisplayFunctions.R')
+source('script/ConceptSetDiagnostics.R')
 
 
 options(scipen = 999)
 
 IR_all_orig <-  readr::read_csv('data/aesi_ir_raw_27april.csv', col_types = readr::cols())
-
 meta_result0 <- readr::read_csv('data/meta_result0_27April.csv', col_types = readr::cols())
 
 ## subgroup ref 
