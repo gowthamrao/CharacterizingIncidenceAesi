@@ -172,6 +172,7 @@ shiny::shinyServer(function(input, output, session) {
       dplyr::select(.data$phenotype,.data$cohortId,.data$cohortName,.data$link) %>% 
       dplyr::mutate(cohortName = paste0("<a href='",.data$link,"'>",.data$cohortName,"</a>")) %>% 
       dplyr::select(-.data$link)
+    colnames(data) <- camelCaseToTitleCase(colnames(data))
     table <- standardDataTable(data)
     return(table)
   }, selection = "single")
