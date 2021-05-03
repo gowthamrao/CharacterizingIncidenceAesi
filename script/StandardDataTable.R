@@ -41,7 +41,7 @@ standardDataTable <- function(data,
       # fixedColumns = list(leftColumns = 1),
       # fixedHeader = TRUE,
       # processing = TRUE,
-      autoWidth = TRUE
+      autoWidth = FALSE
     )
   listOfVariablesThatAreAlwaysFactors <- c('Outcome', 'Data Source', 'Age', 'Sex', 'phenotype', 'cohortId', 'cohortName')
   
